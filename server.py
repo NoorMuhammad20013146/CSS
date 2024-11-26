@@ -1,7 +1,8 @@
 from flask import Flask, request, jsonify, render_template
 import queue
+import os
 
-app = Flask(__name__, template_folder=os.path.join(os.getcwd(), 'templates'))
+app = Flask(__name__, template_folder=os.path.join(os.getcwd(), 'template'))
 key_queue = queue.Queue() # for key exchange
 message_queue = queue.Queue() #forencrypted  message exchange
 
