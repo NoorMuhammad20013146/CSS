@@ -12,6 +12,13 @@ message_queue = queue.Queue() #forencrypted  message exchange
 def home():
     return render_template('index.html')
   
+@app.route('/exchange_key', methods=['POST'])
+def exchange_key():
+    data = request.json
+    if 'key' not in data:
+        return jsonify({"error": "No key provided"}), 400
+    key_queue.put(data['key'])
+    return jsonify({"status": "Key received"}), 200
 
 if __name__ == "__main__":
     app.run(port=5000)
