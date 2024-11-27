@@ -3,14 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <title>Encrypted Communication</title>
 </head>
-<body>
-    <h1>Welcome to Secured Communication App</h1>
-    <h2>Key Exchange</h2>
-    <input id="publicKeyInput" type="text" placeholder="Enter your public key">
-    <button onclick="uploadKey()">Upload Public Key</button>
-    <button onclick="fetchKey()">Fetch AES Key</button>
-    <div id="keyOutput">Key exchange messages will appear here.</div>
+<body class="container">
+    <div class="">
+        <h1>Welcome to Secured Communication App</h1>
+        <h2>Key Exchange</h2>
+        <input id="publicKeyInput" type="text" placeholder="Enter your public key">
+        <button onclick="uploadKey()">Upload Public Key</button>
+        <button onclick="fetchKey()">Fetch AES Key</button>
+        <div id="keyOutput">Key exchange messages will appear here.</div>
+    </div>
+    <div>
+        <h2>Messaging</h2>
+        <input id="messageInput" type="text" placeholder="Enter your message">
+        <button onclick="sendMessage()">Send Encrypted Message</button>
+        <button onclick="fetchMessage()">Fetch Encrypted Message</button>
+        <div id="messageOutput">Message exchange details will appear here.</div>
+        </div>
 </body>
 </html>
