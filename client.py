@@ -18,3 +18,5 @@ def fetch_key():
         print("Error fetching key:", str(e))
 
 if __name__ == "__main__":
+    send_key("dummy_public_key")
+    fetch_key()
