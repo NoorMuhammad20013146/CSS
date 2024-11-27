@@ -20,5 +20,8 @@ def exchange_key():
     key_queue.put(data['key'])
     return jsonify({"status": "Key received"}), 200
 
+@app.route('/get_key', methods=['GET'])
+def get_key():
+
 if __name__ == "__main__":
     app.run(port=5000)
