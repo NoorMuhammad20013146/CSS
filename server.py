@@ -10,10 +10,8 @@ message_queue = queue.Queue() #forencrypted  message exchange
 # Serve the index.html file
 @app.route('/')
 def home():
-    try:
-        return render_template('index.html')
-    except Exception as e:
-        return jsonify({"error":str(e)}), 500
+    return render_template('index.html')
+  
 
 if __name__ == "__main__":
-    app.run(debug=True, port=5000)
+    app.run(port=5000)
