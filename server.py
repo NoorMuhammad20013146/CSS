@@ -25,6 +25,9 @@ def get_key():
     if not key_queue.empty():
         return jsonify({"key": key_queue.get()}), 200
     return jsonify({"status": "No keys available"}), 200
-     
+
+@app.route('/send_message', methods=['POST'])
+def send_message():
+    
 if __name__ == "__main__":
     app.run(port=5000)
