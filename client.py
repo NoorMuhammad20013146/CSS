@@ -33,7 +33,7 @@ def fetch_message():
     except Exception as e:
         print("Error fetching message:", str(e))
 
-        
+
 if __name__ == "__main__":
-    send_key("dummy_public_key")
+    send_key("Hello, Secure world")
     fetch_key()
