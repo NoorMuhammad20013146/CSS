@@ -17,6 +17,14 @@ def fetch_key():
     except Exception as e:
         print("Error fetching key:", str(e))
 
+#add send message function
+def send_message(message):
+    try:
+        response = requests.post(f"{SERVER_URL}/send_message", json={"message": message})
+        print("Send Message Response:", response.json())
+    except Exception as e:
+        print("Error sending message:", str(e))
+
 if __name__ == "__main__":
     send_key("dummy_public_key")
     fetch_key()
