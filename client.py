@@ -25,6 +25,15 @@ def send_message(message):
     except Exception as e:
         print("Error sending message:", str(e))
 
+#Fetch Message Function
+def fetch_message():
+    try:
+        response = requests.get(f"{SERVER_URL}/get_message")
+        print("Fetch Message Response:", response.json())
+    except Exception as e:
+        print("Error fetching message:", str(e))
+
+        
 if __name__ == "__main__":
     send_key("dummy_public_key")
     fetch_key()
