@@ -2,8 +2,14 @@ from Crypto.PublicKey import RSA
 from Crypto.Cipher import PKCS1_OAEP, AES
 from Crypto.Util.Padding import pad, unpad
 import requests
+import base64
 
+# Constants
 SERVER_URL = "http://127.0.0.1:5000"
+# Symmetric key for AES
+AES_KEY = b'secretkey1234567'
+
+
 #send key function
 def send_key(public_key):
     try:
