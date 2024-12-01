@@ -9,6 +9,13 @@ SERVER_URL = "http://127.0.0.1:5000"
 # Symmetric key for AES
 AES_KEY = b'secretkey1234567'
 
+# Add RSA key pair genration function
+def generate_rsa_keypair():
+    key = RSA.generate(2048)
+    private_key = key.export_key()
+    public_key = key.publickey().export_key()
+    return private_key, public_key
+
 
 #send key function
 def send_key(public_key):
