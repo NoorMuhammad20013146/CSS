@@ -16,6 +16,12 @@ def generate_rsa_keypair():
     public_key = key.publickey().export_key()
     return private_key, public_key
 
+# Add RSA key pair Encryption functioin
+def rsa_encrypt(public_key, data):
+    key = RSA.import_key(public_key)
+    cipher = PKCS1_OAEP.new(key)
+    return cipher.encrypt(data)
+
 
 #send key function
 def send_key(public_key):
