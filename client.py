@@ -22,6 +22,12 @@ def rsa_encrypt(public_key, data):
     cipher = PKCS1_OAEP.new(key)
     return cipher.encrypt(data)
 
+# Add RSA Decryption key pair function
+def rsa_decrypt(private_key, encrypted_data):
+    key = RSA.import_key(private_key)
+    cipher = PKCS1_OAEP.new(key)
+    return cipher.decrypt(encrypted_data)
+
 
 #send key function
 def send_key(public_key):
