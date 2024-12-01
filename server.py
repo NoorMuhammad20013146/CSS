@@ -17,7 +17,7 @@ def exchange_key():
     data = request.json
     if 'key' not in data:
         return jsonify({"error": "No key provided"}), 400
-    key_queue.put(data['key'])
+    key_queue.put(data['key']) # Store the encrypted symmetric key
     return jsonify({"status": "Key received"}), 200
 
 #Add Get key Function
@@ -33,7 +33,7 @@ def send_message():
     data = request.json
     if 'message' not in data:
         return jsonify({"error": "No message provided"}), 400
-    message_queue.put(data['message'])
+    message_queue.put(data['message']) # Store the encrypted message
     return jsonify({"status": "Message received"}), 200
 
 #Add get message function
