@@ -11,7 +11,7 @@ message_queue = queue.Queue() #forencrypted  message exchange
 @app.route('/')
 def home():
     return render_template('index.html')
-  
+#added endpoint for Key_Exchange
 @app.route('/exchange_key', methods=['POST'])
 def exchange_key():
     data = request.json
